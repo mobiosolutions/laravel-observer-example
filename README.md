@@ -27,7 +27,7 @@ Restoring 	: 	before a soft-deleted record is going to be restored.
 Restored 	: 	after a soft-deleted record has been restored.
 
 # Why We Want To Use Model Observer.
-Now, suppose, if we want to concatenate the string with name or We have to add some tax to the product price, but we do not want to write the logic or function in the controller then, we can use the Model Events. It will fire automatically when the new record is created or updated or deleted. There are Some types of Model Events available in Laravel Doc
+Now, suppose, if we want to concatenate the string with name or We have to add some tax to the product price, but we do not want to write the logic or function in the controller then, we can use the Model Events. It will fire automatically when the new record is created or updated or deleted. There are Some types of Model Events available in <a href="https://laravel.com/docs/5.5/eloquent#observers">laravel Doc</a>
 
 # How To Create And Use Model Observer
 Create Service Provider for the Observers.
@@ -38,10 +38,8 @@ Make the service provider for the following command.
 Register this service provider into the Laravel App. Go to the config/app.php file. Add the following code.
 
     'providers' => [
-
-       App\Providers\CategoryModelServiceProvider::class,
-
-    ]
+        App\Providers\CategoryModelServiceProvider::class,
+     ]
 
 Now run the following command it will create App/Observers/CategoryObserver file.
 
@@ -50,21 +48,15 @@ Now run the following command it will create App/Observers/CategoryObserver file
 Then write function of observer like this.
 
     public function creating(Category $category)
- 
     {
- 
        Log::info("========= Observer Creating ==========");
- 
     }
 
 Need to register this observer inside the App/Providers/CategoryModelServiceProvider.php file.
 
     public function boot()
- 
     {
- 
        Category::observe(CategoryObserver::class);
- 
     }
    
 # Installation and use
