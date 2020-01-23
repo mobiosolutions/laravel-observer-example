@@ -27,7 +27,7 @@ Restoring 	: 	before a soft-deleted record is going to be restored.
 Restored 	: 	after a soft-deleted record has been restored.
 
 # Why We Want To Use Model Observer.
-Now, suppose, if we want to concatenate the string with name or We have to add some tax to the product price, but we do not want to write the logic or function in the controller then, we can use the Model Events. It will fire automatically when the new record is created or updated or deleted. There are Some types of Model Events available in <a href="https://laravel.com/docs/5.5/eloquent#observers">laravel Doc</a>
+Now, suppose, if we want to concatenate the string with name or We have to add some tax to the product price, but we do not want to write the logic or function in the controller then, we can use the Model Events. It will fire automatically when the new record is created or updated or deleted. There are Some types of Model Events available in <a href="https://laravel.com/docs/5.5/eloquent#observers">Laravel Doc</a>
 
 # How To Create And Use Model Observer
 Create Service Provider for the Observers.
