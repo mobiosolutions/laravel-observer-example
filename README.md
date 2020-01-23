@@ -33,53 +33,53 @@ Now, suppose, if we want to concatenate the string with name or We have to add s
 Create Service Provider for the Observers.
 Make the service provider for the following command.
 
-php artisan make:provider CategoryModelServiceProvider
+    php artisan make:provider CategoryModelServiceProvider
 
 Register this service provider into the Laravel App. Go to the config/app.php file. Add the following code.
 
-'providers' => [
+    'providers' => [
 
-     App\Providers\CategoryModelServiceProvider::class,
+       App\Providers\CategoryModelServiceProvider::class,
 
-]
+    ]
 
 Now run the following command it will create App/Observers/CategoryObserver file.
 
-php artisan make:observer CategoryObserver
+    php artisan make:observer CategoryObserver
 
 Then write function of observer like this.
 
- public function creating(Category $category)
+    public function creating(Category $category)
  
- {
+    {
  
-    Log::info("========= Observer Creating ==========");
+       Log::info("========= Observer Creating ==========");
  
- }
+    }
 
 Need to register this observer inside the App/Providers/CategoryModelServiceProvider.php file.
 
- public function boot()
+    public function boot()
  
- {
+    {
  
-    Category::observe(CategoryObserver::class);
+       Category::observe(CategoryObserver::class);
  
- }
+    }
    
 # Installation and use
 
-$ git clone https://github.com/mobiosolutions/laravel-observer-example.git
+    $ git clone https://github.com/mobiosolutions/laravel-observer-example.git
 
-$ cp .env.example .env
+    $ cp .env.example .env
 
 Change configuration according to your need in ".env" file and create Database
 
-$ composer install
+    $ composer install
 
-$ php artisan migrate
+    $ php artisan migrate
 
-$ php artisan serve
+    $ php artisan serve
 
 # More From Our MobioSolutions Team
 Read our Blog https://mobiosolutions.com/how-to-install-and-use-laravel-model-observers/
